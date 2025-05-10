@@ -34,3 +34,14 @@ There are several reports about this issue:
 In my experience, even when the system doesn’t crash, the extruder behaves erratically and often over-extrudes.
 
 If you know how to enable this feature and without any quality issue, please let me know. I really wannt know how to enable without any quality issue.
+
+
+## Changing the Extruder Stepper
+
+The default CP-01 extruder stepper is outdated and difficult to source, making direct replacement challenging. If your setup lacks the TMC UART feature, replacing the stepper can be risky. If the replacement stepper has a lower resistance, the TMC driver will detect it and issue a warning. If you haven't soldered a jumper wire to enable the UART function, it's best to skip this step to avoid damaging the driver.
+
+If you decide to replace the stepper, use a multimeter to verify the wiring of the original stepper. Adjust the wiring order as needed to ensure proper functionality.
+
+### Summary
+
+The stock extruder is highly inefficient. Replacing the extruder stepper can significantly improve the printer's maximum acceleration (`max_accel`) and maximum velocity (`max_velocity`). While the XYZ axes can handle higher speeds, the extruder remains a bottleneck. The most effective solution is to replace the entire extruder rather than just upgrading its stepper motor.
