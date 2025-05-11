@@ -53,5 +53,3 @@ TMC 'extruder' reports error: DRV_STATUS: 40130020 s2vsb=1(ShortToSupply_B!) cs_
 ```
 
 No matter whether it's ShortToSupply_B or ShortToSupply_A, the issue occurs randomly in layer 2 or layer 3. I have no idea why! All I know is that disabling `Pressure Advance` and disable `stealthchop` can improve the situation, but it doesn't completely prevent it from happening.
-
-M3F model is more likely to crash when sliced into G-code compared to an STL model, even though the final file format is always G-code. I have no idea why.
