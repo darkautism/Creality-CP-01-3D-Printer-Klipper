@@ -6,6 +6,8 @@ Since no one else is providing support, I decided to take matters into my own ha
 If you don’t already own a 3D printer, do not buy this model. Creality has discontinued all support for the CP-01, and you won’t even find it listed in their own slicer software. If you already own one and need help modifying it, this repository will be useful.
 Make sure you have a Raspberry Pi or another single-board computer (SBC) ready to use as the host.
 
+I must say, if your hobby is fixing or modifying 3D printers, Creality is one of the best brands you can find. You'll end up spending more time repairing it than actually printing STL files.
+
 ## Flashing Klipper
 Flashing Klipper onto your printer is straightforward: simply select avrmega2560 as the target. The challenging part is creating a configuration file for your printer. Unfortunately, there are no pre-made configurations for the CP-01 available online. However, you can now use the configuration I’ve provided: CP-01 Config ([configs/printer-cp01.cfg](configs/printer-cp01.cfg)).
 
@@ -53,3 +55,5 @@ TMC 'extruder' reports error: DRV_STATUS: 40130020 s2vsb=1(ShortToSupply_B!) cs_
 ```
 
 No matter whether it's ShortToSupply_B or ShortToSupply_A, the issue occurs randomly in layer 2 or layer 3. I have no idea why! All I know is that disabling `Pressure Advance` and disable `stealthchop` can improve the situation, but it doesn't completely prevent it from happening.
+
+According characpter `Pressure Advance` 's github issue, uddenly stopping the stepper motor generates a strong back EMF. Since stealthchop mode introduces a delay, it may amplify this back EMF even further. The TMC driver detects this back EMF and misinterprets it as a short circuit. However, I don’t understand why this issue always occurs with the extruder. I just have to say—the CP-01's extruder is garbage! The worst extruder ever.
