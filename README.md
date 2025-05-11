@@ -45,3 +45,11 @@ If you decide to replace the stepper, use a multimeter to verify the wiring of t
 ### Summary
 
 The stock extruder is highly inefficient. Replacing the extruder stepper can significantly improve the printer's maximum acceleration (`max_accel`) and maximum velocity (`max_velocity`). While the XYZ axes can handle higher speeds, the extruder remains a bottleneck. The most effective solution is to replace the entire extruder rather than just upgrading its stepper motor.
+
+## TMC Driver failed
+
+```
+TMC 'extruder' reports error: DRV_STATUS: 40130020 s2vsb=1(ShortToSupply_B!) cs_actual=19 stealth=1
+```
+
+No matter whether it's ShortToSupply_B or ShortToSupply_A, the issue occurs randomly in layer 2 or layer 3. I have no idea why! All I know is that disabling `Pressure Advance` and reducing the speed can improve the situation, but it doesn't completely prevent it from happening.
