@@ -64,3 +64,12 @@ To pinpoint the exact cause, I disabled all features and halted printing. First,
 So, I adjusted the slicer settings to enforce 100% minimum fan speed, meaning the fan could now only be 0% or 100%. With this setup, I successfully completed a 150mm/s print with excellent quality—no crashes, and none of that annoying electrical noise (though, of course, the fan itself is still loud).
 That means my previous hypothesis was incorrect. The problem wasn't with the extruder, but rather the mainboard—though this revelation unfortunately doesn’t absolve the extruder of its infamous reputation as the worst extruder ever.
 I suspect that with the fan locked at 100%, I might now be able to enable Pressure Advance or StealthChop—though I haven’t tested that yet. But for now, things are running smoothly, and I can finally take a break from fixing my 3D printer. Time to print some parts and get back to my journey!
+
+### PWM Cause crash
+After many research, I totaly confirm all of crash just because the pwm fan causing the gnd voltage not stable thus cause the tmc driver failed (EMI). The normal way to prevent EMI is split gnd. The Easy way is use EBB36.
+
+## Extruder
+
+![new_extruder.png](images/new_extruder.png)
+
+Printer now can running on 100mm/s with good quality.
